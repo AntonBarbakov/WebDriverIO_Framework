@@ -20,4 +20,5 @@ module.exports = {
     Step,
     WaitInSeconds,
     Open,
+    Case,
 }
