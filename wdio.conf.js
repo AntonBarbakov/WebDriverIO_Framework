@@ -21,7 +21,8 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+        './test/example.js',
+        './test/actions.js'
     ],
     //
     // ============
