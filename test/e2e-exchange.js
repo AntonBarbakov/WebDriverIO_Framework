@@ -1,8 +1,8 @@
-import App from '../page-objects/App'
-import LoginPage from '../page-objects/pages/LoginPage'
-import ExchangePage from '../page-objects/pages/ExchangePage'
-import Navbar from '../page-objects/components/Navbar'
-import InsideNavbar from '../page-objects/components/InsideNavbar'
+import App from '../test/page-objects/App'
+import LoginPage from '../test/page-objects/pages/LoginPage'
+import ExchangePage from '../test/page-objects/pages/ExchangePage'
+import Navbar from '../test/page-objects/components/Navbar'
+import InsideNavbar from '../test/page-objects/components/InsideNavbar'
  
 describe('E2E Tests - Currency Exchange', () => {
     it('Should log into application', () => {
