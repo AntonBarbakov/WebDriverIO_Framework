@@ -1,14 +1,14 @@
+import App from '../page-objects/App'
+import LoginPage from '../page-objects/pages/LoginPage'
+import ExchangePage from '../page-objects/pages/ExchangePage'
+import Navbar from '../page-objects/components/Navbar'
+
 describe('E2E Tests - Pay', () => {
 	it('Should log into application', () => {
-		browser.url('http://zero.webappsecurity.com/index.html')
-		$('#signin_button').waitForExist()
-		$('#signin_button').click()
-		$('#login_form').waitForExist()
-		$('#user_login').setValue('username')
-		$('#user_password').setValue('password')
-		$('input[type="submit"]').click()
-		$('.nav-tabs').waitForExist()
-	})
+        App.openLoginPage()
+        LoginPage.login('username', 'password')
+        Navbar.insideNavbarIsVisible()
+    })
  
 	it('Should make payment', () => {
 		$('#pay_bills_tab').click()
