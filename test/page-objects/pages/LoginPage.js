@@ -14,7 +14,7 @@ class LoginPage extends Base {
     }
 
     get submitButton() {
-        return $('input[type="submit')
+        return $('input[type="submit"]')
     }
 
     get error() {
@@ -38,7 +38,7 @@ class LoginPage extends Base {
         this.loginForm.waitForExist()
         this.userNameInput.setValue(username)
         this.passwordInput.setValue(password)
-        this.submitButtom.click()
+        this.submitButton.click()
     }
 }
 
