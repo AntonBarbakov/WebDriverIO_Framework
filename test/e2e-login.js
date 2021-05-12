@@ -1,34 +1,30 @@
 import App from '../test/page-objects/App'
 import LoginPage from '../test/page-objects/pages/LoginPage'
+import Navbar from '../test/page-objects/components/Navbar'
 
 describe('E2E Tests - Login / Logout Flow', () => {
     it('Should not login with invalid credentials', () => {
         App.openHomePage()
-        $('#signin_button').waitForExist()
-        $('#signin_button').click()
+        Navbar.clickSignIn()
         LoginPage.pauseLong()
         LoginPage.formIsVisible()
         LoginPage.fillForm('invalid username', 'invalid password')
         LoginPage.submitForm()
-        const error = $('.alert-error')
-        expect(error).toHaveText('Login and/or password are wrong.')
+        const message = LoginPage.error
+        expect(message).toHaveText('Login and/or password are wrong.')
     })
  
     it('Should login with valid credentials', () => {
         App.openHomePage()
-        $('#signin_button').waitForExist()
-        $('#signin_button').click()
+        Navbar.clickSignIn()
         LoginPage.formIsVisible()
         LoginPage.fillForm('username', 'password')
         LoginPage.submitForm()
-        $('.nav-tabs').waitForExist()
+        Navbar.insideNavbarIsVisible()
     })
  
     it('Should logout from app', () => {
-        $('.icon-user').waitForExist()
-        $('.icon-user').click()
-        $('#logout_link').waitForExist()
-        $('#logout_link').click()
-        $('#pages-nav').waitForExist()
+        App.logout()
+        Navbar.signInButtonIsVisible()
     })
 })
